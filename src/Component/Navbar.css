@@ -1,0 +1,146 @@
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.close-button {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+  user-select: none;
+}
+
+.close-button:hover {
+  color: yellow;
+}
+
+.textcontainer {
+    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0px; /* stacked borders perfectly */
+}
+
+.navbar-item {
+  width: 100%;
+  position: relative;
+}
+
+.hover-box {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  border-top: 2px solid white;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hover-text {
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: 2;
+  transition: opacity 0.3s;
+}
+
+.hover-marquee {
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  z-index: 2;
+  right: -100%;
+  display: none;
+}
+
+.hover-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: green;
+  z-index: 1;
+  transition: width 0.5s ease forwards;
+}
+
+.hover-box:hover .hover-text {
+  opacity: 0;
+}
+
+.hover-box:hover::before {
+  width: 100%;
+}
+
+.hover-box:hover .hover-marquee {
+  display: block;
+  animation: marquee 5s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+
+
+.hover-boxlast {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.hover-boxlast::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: green;
+  z-index: 1;
+  transition: width 0.5s ease forwards;
+}
+.hover-boxlast:hover .hover-text {
+  opacity: 0;
+}
+
+.hover-boxlast:hover::before {
+  width: 100%;
+}
+
+.hover-boxlast:hover .hover-marquee {
+  display: block;
+  animation: marquee 5s linear infinite;
+}
